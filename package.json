@@ -7,10 +7,12 @@
   ],
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "rollup --config ./rollup.config.js",
+    "build": "npm run clean && rollup --config ./rollup.config.js",
+    "build:watch": "npm run clean && rollup --watch --config ./rollup.config.js",
+    "clean": "npx rimraf ./dist",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "preinstall": "npx rimraf .husky/pre-commit",
-    "prepare": "husky install",
+    "prepare": "husky install && npm run test && npm run build",
     "postprepare": "npx husky add .husky/pre-commit \"npm run format && npm run test && git add .\"",
     "test": "jest"
   },
