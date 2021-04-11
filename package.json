@@ -1,0 +1,69 @@
+{
+  "name": "react-auto-textarea",
+  "version": "1.0.0",
+  "description": "A <textarea /> element that automatically resizes the height of the content.",
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "preinstall": "npx rimraf .husky/pre-commit",
+    "prepare": "husky install",
+    "postprepare": "npx husky add .husky/pre-commit \"npm run format && npm run test && git add .\"",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Brandon Tom",
+    "email": "magicink@gmail.com"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./src/tests/setup.js"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "trailingComma": "none",
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "bracketSpacing": true,
+    "tabWidth": 2,
+    "jsxBracketSameLine": false
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.13.8",
+    "@babel/plugin-proposal-optional-chaining": "^7.13.12",
+    "@babel/plugin-transform-arrow-functions": "^7.13.0",
+    "@babel/plugin-transform-block-scoping": "^7.12.13",
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
+    "@babel/plugin-transform-react-jsx": "^7.13.12",
+    "@babel/plugin-transform-regenerator": "^7.13.15",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/plugin-transform-template-literals": "^7.12.13",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/runtime": "^7.13.10",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "babel-jest": "^26.6.3",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.45.1",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
