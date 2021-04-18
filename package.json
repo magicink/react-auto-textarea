@@ -13,7 +13,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "preinstall": "npx rimraf .husky/pre-commit",
     "prepare": "husky install && npm run test && npm run build",
-    "postprepare": "npx husky add .husky/pre-commit \"npm run format && npm run test && git add .\"",
+    "postprepare": "npx husky add .husky/pre-commit \"npm run format && npm run test && npm run build && git add .\"",
     "test": "jest"
   },
   "keywords": [],
