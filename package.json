@@ -11,9 +11,6 @@
     "build:watch": "npm run clean && rollup --watch --config ./rollup.config.js",
     "clean": "npx rimraf ./dist",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "preinstall": "npx rimraf .husky/pre-commit",
-    "prepare": "npx husky install && npm run test && npm run build",
-    "postprepare": "npx husky add .husky/pre-commit \"npm run format && npm run test && npm run build && git add .\"",
     "test": "jest"
   },
   "keywords": [],
